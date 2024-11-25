@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "CommonJS",
+      "outDir": ".",
+      "rootDir": ".",
+      "strict": true,
+      "noImplicitAny": true,
+      "sourceMap": true
+    },
+    "include": ["engine/**/*", "games/**/*"],
+    "exclude": ["node_modules", "dist"]
+}
+  

@@ -1,0 +1,16 @@
+{
+  "name": "player-game",
+  "version": "1.0.0",
+  "description": "A fast, free and fun Typescript Game Framework for Desktop and Mobile web browsers",
+  "author": "Georgii Kharlampiiev <georgii@artcraft.games> (https://artcraft.games)",
+  "homepage": "https://artcraft.games",
+  "bugs": "https://github.com/ArtCraftGames/ArtCraftEngine",
+  "scripts": {
+    "format": "prettier --write ./src && eslint . --fix",
+    "build": "esbuild src/game.ts --bundle --minify --outfile=dist/bundle.js",
+    "watch": "esbuild src/game.ts --bundle --minify --outfile=dist/bundle.js --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
