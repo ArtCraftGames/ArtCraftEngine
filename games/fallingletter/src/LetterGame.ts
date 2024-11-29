@@ -37,8 +37,7 @@ export class LetterGame {
       this.letters[Math.floor(Math.random() * this.letters.length)];
     const randomX = Math.random() * (800 - 50); // Random x position within canvas width
     const speed = 50 + Math.random() * 60;
-    // const soundPath = `assets/sounds/${randomLetter}.mp3`;
-    const soundPath = `assets/sounds/a.mp3`;
+    const soundPath = `assets/sounds/${randomLetter}.mp3`;
 
     const letter = new FallingLetter(
       randomLetter,

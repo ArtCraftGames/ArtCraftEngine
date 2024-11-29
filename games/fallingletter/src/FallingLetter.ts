@@ -3,6 +3,18 @@
 import { IGameObject } from "../../../engine/src/gameobject/IGameObject";
 import { mouseState } from "../../../engine/src//input/Input";
 
+const htmlStandardColors: string[] = [
+  'black', 'white', 'red', 'green', 'blue', 'yellow', 'cyan', 'magenta',
+  'gray', 'silver', 'maroon', 'olive', 'lime', 'aqua', 'teal', 'navy',
+  'purple', 'fuchsia', 'orange', 'brown', 'pink', 'gold', 'beige', 'ivory',
+  'khaki', 'lavender', 'indigo', 'violet', 'tan', 'coral', 'turquoise',
+  'salmon', 'plum', 'orchid', 'peachpuff', 'seashell', 'slateblue',
+  'skyblue', 'springgreen', 'steelblue', 'tomato', 'wheat', 'yellowgreen',
+  'darkred', 'darkgreen', 'darkblue', 'darkgray', 'darkcyan', 'darkmagenta',
+  'darkorange', 'darkorchid', 'darksalmon', 'darkviolet', 'darkolivegreen',
+  'darkslategray', 'darkturquoise', 'darkkhaki', 'darkgoldenrod'
+];
+
 export class FallingLetter implements IGameObject {
   letter: string;
   speed: number;
@@ -12,6 +24,7 @@ export class FallingLetter implements IGameObject {
   zIndex?: number | undefined;
   // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   destroy: Function;
+  color: string
 
   constructor(
     letter: string,
@@ -29,6 +42,7 @@ export class FallingLetter implements IGameObject {
     this.destroy = destroy;
     // Load sound
     this.sound = new Audio(soundPath);
+    this.color = htmlStandardColors[Math.floor(Math.random() * htmlStandardColors.length)];
   }
 
   update(deltaTime: number): void {
@@ -52,8 +66,8 @@ export class FallingLetter implements IGameObject {
   }
 
   render(ctx: CanvasRenderingContext2D): void {
-    ctx.fillStyle = "black";
-    ctx.font = "30px Arial";
+    ctx.fillStyle = this.color;
+    ctx.font = "60px Arial";
     ctx.fillText(this.letter, this.x, this.y);
   }
 
